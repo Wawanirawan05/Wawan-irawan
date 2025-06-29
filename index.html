@@ -65,12 +65,13 @@
     <div id="visitorCount">Loading...</div>
     <p>Total Pengunjung Website</p>
 
-    <!-- Firebase Script -->
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-      import { getDatabase, ref, runTransaction, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
-      const firebaseConfig = {
+    <script>
+      // Konfigurasi Firebase
+      var firebaseConfig = {
         apiKey: "AIzaSyDE7RzCn7Js9S_nre5fhPxxqGivXvuAx3U",
         authDomain: "wawan-irawan-website.firebaseapp.com",
         databaseURL: "https://wawan-irawan-website-default-rtdb.firebaseio.com",
@@ -81,17 +82,20 @@
         measurementId: "G-1FBWMK8YH6"
       };
 
-      const app = initializeApp(firebaseConfig);
-      const db = getDatabase(app);
-      const counterRef = ref(db, 'visitorCount');
+      // Inisialisasi Firebase
+      firebase.initializeApp(firebaseConfig);
+      var database = firebase.database();
+      var visitorRef = database.ref("visitorCount");
 
-      runTransaction(counterRef, (current) => {
+      // Tambahkan 1 tiap kali dikunjungi
+      visitorRef.transaction(function (current) {
         return (current || 0) + 1;
       });
 
-      onValue(counterRef, (snapshot) => {
-        const count = snapshot.val();
-        document.getElementById("visitorCount").innerText = `${count}`;
+      // Ambil dan tampilkan nilai pengunjung
+      visitorRef.on("value", function(snapshot) {
+        var count = snapshot.val();
+        document.getElementById("visitorCount").innerText = count;
       });
     </script>
   </body>
