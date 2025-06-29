@@ -1,176 +1,98 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Website Wawan Irawan</title>
-  <style>
-    body {
-      background: linear-gradient(to right, #6dd5ed, #2193b0);
-      font-family: Arial, sans-serif;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      overflow-x: hidden;
-    }
-
-    h1, h2, p {
-      margin-top: 30px;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    .wa-button {
-      background-color: #25D366;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 10px;
-      animation: swing 1.5s infinite alternate;
-    }
-
-    img {
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      animation: float 3s ease-in-out infinite;
-    }
-
-    a {
-      color: #ffeb3b;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .marquee-container {
-      width: 100%;
-      overflow: hidden;
-      height: 40px;
-      position: relative;
-      white-space: nowrap;
-    }
-
-    .marquee-text {
-      position: absolute;
-      white-space: nowrap;
-      font-style: italic;
-      font-weight: bold;
-      font-size: 18px;
-      color: #fff;
-      left: 0;
-    }
-
-    .run {
-      animation: scroll-left 15s linear infinite;
-    }
-
-    @keyframes scroll-left {
-      0% { left: 100%; }
-      100% { left: -100%; }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
-    }
-
-    @keyframes swing {
-      0% { transform: rotate(0deg); }
-      50% { transform: rotate(3deg); }
-      100% { transform: rotate(-3deg); }
-    }
-  </style>
-</head>
-<body>
-  <h1>Halo, saya Wawan Irawan</h1>
-  <p>Saya sedang belajar jadi Web Developer dari nol!</p>
-
-  <h2>Kontak</h2>
-  <p>WA: 0838-0896-8682</p>
-  <p>Email: wawan059irawan@gmail.com</p>
-
-  <h2>QUOTES</h2>
-  <div class="marquee-container">
-    <div class="marquee-text" id="quote"></div>
-  </div>
-
-  <h2>Foto Favorit</h2>
-  <img src="https://i.imgur.com/MqwVXMw.jpeg" alt="Foto lucu" width="200">
-
-  <h2>Sosial Media</h2>
-  <p>
-    <a href="https://www.instagram.com/wawanirawan_05?igsh=bTl2OGVxeXRmZHpq" target="_blank">Instagram Saya</a><br>
-    <a href="https://www.tiktok.com/@error_error123?_t=ZS-8xaOKvyMNuh&_r=1" target="_blank">TikTok Saya</a>
-  </p>
-
-  <a href="https://wa.me/6283808968682" target="_blank" class="wa-button">
-    💬 Chat di WhatsApp
-  </a>
-
-  <h2 id="visitor-count">Loading...</h2>
-  <p>Total Pengunjung Website</p>
-
-  <!-- Quotes Typing Effect -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const text = '"KAMU BUKAN GAGAL, KAMU SEDANG MEMBANGUN CARAMU SENDIRI UNTUK SUKSES!!"';
-      const quote = document.getElementById("quote");
-      let index = 0;
-      let typedText = "";
-
-      function typeEffect() {
-        if (quote && index < text.length) {
-          typedText += text.charAt(index);
-          quote.textContent = typedText;
-          index++;
-          setTimeout(typeEffect, 60);
-        } else if (quote) {
-          quote.classList.add("run");
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Website Wawan Irawan</title>
+    <style>
+      body {
+        background: linear-gradient(to right, #6dd5ed, #2193b0);
+        font-family: Arial, sans-serif;
+        color: white;
+        text-align: center;
+        padding: 20px;
       }
 
-      typeEffect();
-    });
-  </script>
+      h1, h2, p {
+        margin: 10px 0;
+      }
 
-  <!-- Firebase Visitor Counter -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+      .btn-wa {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #25D366;
+        color: white;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: bold;
+      }
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyDE7RzCn7Js9S_nre5fhPxxqGivXvuAx3U",
-      authDomain: "wawan-irawan-website.firebaseapp.com",
-      databaseURL: "https://wawan-irawan-website-default-rtdb.firebaseio.com",
-      projectId: "wawan-irawan-website",
-      storageBucket: "wawan-irawan-website.appspot.com",
-      messagingSenderId: "840319963140",
-      appId: "1:840319963140:web:4a3cbd8198953e7c4aa551",
-      measurementId: "G-1FBWMK8YH6"
-    };
+      #visitorCount {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 20px 0 5px;
+      }
 
-    const app = initializeApp(firebaseConfig);
-    const db = getDatabase(app);
-    const counterRef = ref(db, 'visitors');
+      img {
+        max-width: 80%;
+        border-radius: 20px;
+      }
 
-    get(counterRef).then(snapshot => {
-      let count = snapshot.exists() ? snapshot.val() : 0;
-      set(counterRef, count + 1);
-      document.getElementById("visitor-count").textContent = count + 1;
-    }).catch(error => {
-      console.error("Error getting visitor count:", error);
-    });
-  </script>
-</body>
+      .sosmed a {
+        display: block;
+        color: yellow;
+        margin: 5px 0;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>KAMU BUKAN GAGAL, KAMU SEDANG PROSES</h1>
+
+    <h2>Foto Favorit</h2>
+    <img src="https://i.imgur.com/R3bDk8L.jpg" alt="Foto Favorit">
+
+    <h2>Sosial Media</h2>
+    <div class="sosmed">
+      <a href="#">Instagram Saya</a>
+      <a href="#">TikTok Saya</a>
+    </div>
+
+    <a class="btn-wa" href="https://wa.me/6281234567890">Chat di WhatsApp</a>
+
+    <!-- Visitor Counter -->
+    <div id="visitorCount">Loading...</div>
+    <p>Total Pengunjung Website</p>
+
+    <!-- Firebase Script -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+      import { getDatabase, ref, runTransaction, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDE7RzCn7Js9S_nre5fhPxxqGivXvuAx3U",
+        authDomain: "wawan-irawan-website.firebaseapp.com",
+        databaseURL: "https://wawan-irawan-website-default-rtdb.firebaseio.com",
+        projectId: "wawan-irawan-website",
+        storageBucket: "wawan-irawan-website.firebasestorage.app",
+        messagingSenderId: "840319963140",
+        appId: "1:840319963140:web:4a3cbd8198953e7c4aa551",
+        measurementId: "G-1FBWMK8YH6"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+      const counterRef = ref(db, 'visitorCount');
+
+      runTransaction(counterRef, (current) => {
+        return (current || 0) + 1;
+      });
+
+      onValue(counterRef, (snapshot) => {
+        const count = snapshot.val();
+        document.getElementById("visitorCount").innerText = `${count}`;
+      });
+    </script>
+  </body>
 </html>
