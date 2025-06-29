@@ -9,6 +9,7 @@
         color: white;
         text-align: center;
         padding: 20px;
+        overflow-x: hidden;
       }
 
       img {
@@ -44,25 +45,42 @@
         animation: swing 1.5s infinite alternate;
       }
 
-      .swinging {
-        display: inline-block;
-        animation: swing 2s infinite ease-in-out;
+      /* === Container berjalan === */
+      .marquee-container {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        height: 40px;
       }
 
-      /* Animasi Fade In */
+      .marquee-text {
+        position: absolute;
+        white-space: nowrap;
+        animation: scroll-left 15s linear infinite;
+        font-style: italic;
+        font-weight: bold;
+        color: #fff;
+        font-size: 18px;
+      }
+
+      @keyframes scroll-left {
+        0% { left: 100%; }
+        100% { left: -100%; }
+      }
+
+      /* Animasi lain */
       @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
       }
 
-      /* Animasi Floating Gambar */
       @keyframes float {
         0% { transform: translateY(0); }
         50% { transform: translateY(-10px); }
         100% { transform: translateY(0); }
       }
 
-      /* Animasi Swing */
       @keyframes swing {
         0% { transform: rotate(0deg); }
         50% { transform: rotate(3deg); }
@@ -80,7 +98,9 @@
     <p>Email: wawan059irawan@gmail.com</p>
 
     <h2>QUOTES</h2>
-    <p class="swinging"><em>"KAMU BUKAN GAGAL, KAMU SEDANG MEMBANGUN CARAMU SENDIRI UNTUK SUKSES!!"</em></p>
+    <div class="marquee-container">
+      <div class="marquee-text" id="quote"></div>
+    </div>
 
     <h2>Foto Favorit</h2>
     <img src="https://i.imgur.com/MqwVXMw.jpeg" alt="Foto lucu" width="200">
@@ -94,5 +114,25 @@
     <a href="https://wa.me/6283808968682" target="_blank" class="wa-button">
       💬 Chat di WhatsApp
     </a>
+
+    <!-- JavaScript Efek Ketik -->
+    <script>
+      const text = '"KAMU BUKAN GAGAL, KAMU SEDANG MEMBANGUN CARAMU SENDIRI UNTUK SUKSES!!"';
+      const quote = document.getElementById("quote");
+      let index = 0;
+      let typedText = "";
+
+      function typeEffect() {
+        if (index < text.length) {
+          typedText += text.charAt(index);
+          quote.textContent = typedText;
+          index++;
+          setTimeout(typeEffect, 80);
+        }
+      }
+
+      // Mulai ketik saat halaman selesai dimuat
+      window.onload = typeEffect;
+    </script>
   </body>
 </html>
