@@ -8,134 +8,119 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-      background-image: url('https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1400&q=80');
-      background-size: cover;
-      background-position: center;
+      background: linear-gradient(to bottom, #1e1e1e, #3d3d3d);
+      color: white;
       text-align: center;
-      backdrop-filter: brightness(0.5);
     }
-    header {
-      padding: 40px 20px 10px;
+
+    .overlay {
+      padding: 40px 20px;
     }
-    header h1 {
-      font-size: 2.5em;
-      margin: 0;
-      color: #ffd1dc;
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
     }
-    header p {
-      font-size: 1.2em;
-      margin: 5px 0;
+
+    h2 {
+      font-size: 2em;
+      margin-top: 0;
     }
-    img.foto {
-      width: 90%;
-      max-width: 320px;
-      border-radius: 15px;
-      margin-top: 20px;
-      border: 3px solid #fff;
-    }
-    .tanggal {
-      font-size: 1.5em;
-      margin: 15px 0;
-      color: #ffebcd;
-    }
-    .countdown {
-      font-size: 1.2em;
-      margin-bottom: 15px;
-      color: #fff0f5;
-    }
-    .quotes {
+
+    .foto {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 5px solid white;
+      object-fit: cover;
       margin: 20px auto;
-      font-style: italic;
-      font-size: 1.1em;
-      padding: 0 20px;
-      max-width: 600px;
-      color: #fce4ec;
+      box-shadow: 0 0 20px #fff;
     }
-    .btn {
+
+    .countdown {
+      font-size: 1.5em;
+      margin: 20px 0;
+    }
+
+    .button {
       display: inline-block;
-      padding: 12px 24px;
       margin: 10px;
-      background: #ff69b4;
+      padding: 12px 24px;
+      background-color: #ff4081;
       color: white;
+      border: none;
+      border-radius: 30px;
       text-decoration: none;
-      border-radius: 25px;
+      font-weight: bold;
+      transition: background 0.3s;
     }
-    .guestbook input, .guestbook textarea {
-      padding: 10px;
-      width: 90%;
-      max-width: 400px;
-      margin: 10px 0;
-      border-radius: 10px;
-      border: none;
+
+    .button:hover {
+      background-color: #e91e63;
     }
-    .guestbook button {
-      background: #ff69b4;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 20px;
-    }
+
     footer {
-      padding: 20px;
+      margin-top: 30px;
       font-size: 0.9em;
-      color: #ddd;
+      color: #ccc;
+    }
+
+    audio {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <!-- Musik Latar -->
-  <audio autoplay loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3" />
-  </audio>
+  <div class="overlay">
+    <h2>Undangan Pernikahan</h2>
+    <img src="https://via.placeholder.com/300x300.png?text=Foto+Pasangan" alt="Foto Pasangan" class="foto"/>
+    <h1>Wawan & Anis</h1>
+    <p><strong>Selasa, 23 Desember 2025</strong></p>
+    <p>Kp Jantungen, Desa Mekarsari, Kec. Jambe</p>
 
-  <header>
-    <h1>Wawan ❤️ Anis</h1>
-    <p>Minggu, 10 Agustus 2025</p>
-  </header>
+    <!-- Countdown -->
+    <div class="countdown" id="countdown">Menghitung waktu...</div>
 
-  <!-- Foto -->
-  <img class="foto" src="https://raw.githubusercontent.com/wawanirawan05/undangan-pernikahan-final/main/foto-pasangan.jpg" alt="Foto Pasangan"/>
+    <!-- Tombol Google Maps -->
+    <a class="button" href="https://www.google.com/maps/search/?api=1&query=Kp+Jantungen+Desa+Mekarsari+Kec+Jambe" target="_blank">📍 Lihat Lokasi</a>
 
-  <!-- Hitung Mundur -->
-  <div class="tanggal">Akad & Resepsi</div>
-  <div class="countdown" id="countdown">Menghitung hari...</div>
+    <!-- Buku Tamu -->
+    <a class="button" href="https://forms.gle/your-google-form-link" target="_blank">📝 Isi Buku Tamu</a>
 
-  <!-- Quotes Pernikahan -->
-  <div class="quotes">
-    “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan dari jenismu sendiri,
-    agar kamu merasa tenang di sampingnya, dan dijadikan-Nya di antaramu rasa kasih dan sayang.”  
-    <br/><b>QS. Ar-Rum: 21</b>
+    <!-- WhatsApp -->
+    <a class="button" href="https://wa.me/?text=Halo%20Wawan%20%26%20Anis%2C%20selamat%20menempuh%20hidup%20baru!%20❤️" target="_blank">💌 Kirim Ucapan</a>
+
+    <footer>
+      <p>Terima kasih atas doa & restunya 🌸</p>
+    </footer>
   </div>
 
-  <!-- Tombol Lokasi & WA -->
-  <a class="btn" href="https://maps.app.goo.gl/Xxxxx" target="_blank">📍 Lihat Lokasi</a>
-  <a class="btn" href="https://wa.me/6281234567890?text=Saya%20akan%20hadir%20di%20pernikahan%20Wawan%20dan%20Liya" target="_blank">💬 Konfirmasi via WhatsApp</a>
-
-  <!-- Buku Tamu -->
-  <section class="guestbook">
-    <h2>Buku Tamu</h2>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="nama" placeholder="Nama Anda" required /><br/>
-      <textarea name="ucapan" rows="4" placeholder="Ucapan & Doa" required></textarea><br/>
-      <button type="submit">Kirim</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    Terima kasih atas doa & restu Anda 🙏
-  </footer>
+  <!-- Musik Latar -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/14/audio_5fa7fc2e6b.mp3?filename=romantic-piano-ambient-10957.mp3" type="audio/mpeg">
+  </audio>
 
   <!-- Script Countdown -->
   <script>
-    const target = new Date("2025-08-10T00:00:00").getTime();
-    const countdownEl = document.getElementById("countdown");
-    setInterval(() => {
+    const countDownDate = new Date("Dec 23, 2025 00:00:00").getTime();
+
+    const countdownFunction = setInterval(() => {
       const now = new Date().getTime();
-      const selisih = target - now;
-      const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
-      countdownEl.innerText = `💞 ${hari} hari menuju hari bahagia kami 💞`;
+      const distance = countDownDate - now;
+
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "Hari Bahagia Telah Tiba! 🎉";
+        clearInterval(countdownFunction);
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `💞 ${days} hari ${hours} jam ${minutes} menit ${seconds} detik lagi`;
     }, 1000);
   </script>
 </body>
