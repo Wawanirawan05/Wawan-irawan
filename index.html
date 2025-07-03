@@ -1,102 +1,142 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Website Wawan Irawan</title>
-    <style>
-      body {
-        background: linear-gradient(to right, #6dd5ed, #2193b0);
-        font-family: Arial, sans-serif;
-        color: white;
-        text-align: center;
-        padding: 20px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undangan Wawan & Anis</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      background-image: url('https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      backdrop-filter: brightness(0.5);
+    }
+    header {
+      padding: 40px 20px 10px;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      color: #ffd1dc;
+    }
+    header p {
+      font-size: 1.2em;
+      margin: 5px 0;
+    }
+    img.foto {
+      width: 90%;
+      max-width: 320px;
+      border-radius: 15px;
+      margin-top: 20px;
+      border: 3px solid #fff;
+    }
+    .tanggal {
+      font-size: 1.5em;
+      margin: 15px 0;
+      color: #ffebcd;
+    }
+    .countdown {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+      color: #fff0f5;
+    }
+    .quotes {
+      margin: 20px auto;
+      font-style: italic;
+      font-size: 1.1em;
+      padding: 0 20px;
+      max-width: 600px;
+      color: #fce4ec;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 10px;
+      background: #ff69b4;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+    }
+    .guestbook input, .guestbook textarea {
+      padding: 10px;
+      width: 90%;
+      max-width: 400px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: none;
+    }
+    .guestbook button {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+    }
+    footer {
+      padding: 20px;
+      font-size: 0.9em;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <!-- Musik Latar -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3" />
+  </audio>
 
-      h1, h2, p {
-        margin: 10px 0;
-      }
+  <header>
+    <h1>Wawan ❤️ Anis</h1>
+    <p>Minggu, 10 Agustus 2025</p>
+  </header>
 
-      .btn-wa {
-        display: inline-block;
-        margin-top: 10px;
-        padding: 10px 20px;
-        background-color: #25D366;
-        color: white;
-        border-radius: 20px;
-        text-decoration: none;
-        font-weight: bold;
-      }
+  <!-- Foto -->
+  <img class="foto" src="https://raw.githubusercontent.com/wawanirawan05/undangan-pernikahan-final/main/foto-pasangan.jpg" alt="Foto Pasangan"/>
 
-      #visitorCount {
-        font-size: 24px;
-        font-weight: bold;
-        margin: 20px 0 5px;
-      }
+  <!-- Hitung Mundur -->
+  <div class="tanggal">Akad & Resepsi</div>
+  <div class="countdown" id="countdown">Menghitung hari...</div>
 
-      img {
-        max-width: 80%;
-        border-radius: 20px;
-      }
+  <!-- Quotes Pernikahan -->
+  <div class="quotes">
+    “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan dari jenismu sendiri,
+    agar kamu merasa tenang di sampingnya, dan dijadikan-Nya di antaramu rasa kasih dan sayang.”  
+    <br/><b>QS. Ar-Rum: 21</b>
+  </div>
 
-      .sosmed a {
-        display: block;
-        color: yellow;
-        margin: 5px 0;
-        text-decoration: none;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>KAMU BUKAN GAGAL, KAMU SEDANG PROSES</h1>
+  <!-- Tombol Lokasi & WA -->
+  <a class="btn" href="https://maps.app.goo.gl/Xxxxx" target="_blank">📍 Lihat Lokasi</a>
+  <a class="btn" href="https://wa.me/6281234567890?text=Saya%20akan%20hadir%20di%20pernikahan%20Wawan%20dan%20Liya" target="_blank">💬 Konfirmasi via WhatsApp</a>
 
-    <h2>Foto Favorit</h2>
-    <img src="https://i.imgur.com/R3bDk8L.jpg" alt="Foto Favorit">
+  <!-- Buku Tamu -->
+  <section class="guestbook">
+    <h2>Buku Tamu</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="nama" placeholder="Nama Anda" required /><br/>
+      <textarea name="ucapan" rows="4" placeholder="Ucapan & Doa" required></textarea><br/>
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
 
-    <h2>Sosial Media</h2>
-    <div class="sosmed">
-      <a href="#">Instagram Saya</a>
-      <a href="#">TikTok Saya</a>
-    </div>
+  <!-- Footer -->
+  <footer>
+    Terima kasih atas doa & restu Anda 🙏
+  </footer>
 
-    <a class="btn-wa" href="https://wa.me/6281234567890">Chat di WhatsApp</a>
-
-    <!-- Visitor Counter -->
-    <div id="visitorCount">Loading...</div>
-    <p>Total Pengunjung Website</p>
-
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-
-    <script>
-      // Konfigurasi Firebase
-      var firebaseConfig = {
-        apiKey: "AIzaSyDE7RzCn7Js9S_nre5fhPxxqGivXvuAx3U",
-        authDomain: "wawan-irawan-website.firebaseapp.com",
-        databaseURL: "https://wawan-irawan-website-default-rtdb.firebaseio.com",
-        projectId: "wawan-irawan-website",
-        storageBucket: "wawan-irawan-website.firebasestorage.app",
-        messagingSenderId: "840319963140",
-        appId: "1:840319963140:web:4a3cbd8198953e7c4aa551",
-        measurementId: "G-1FBWMK8YH6"
-      };
-
-      // Inisialisasi Firebase
-      firebase.initializeApp(firebaseConfig);
-      var database = firebase.database();
-      var visitorRef = database.ref("visitorCount");
-
-      // Tambahkan 1 tiap kali dikunjungi
-      visitorRef.transaction(function (current) {
-        return (current || 0) + 1;
-      });
-
-      // Ambil dan tampilkan nilai pengunjung
-      visitorRef.on("value", function(snapshot) {
-        var count = snapshot.val();
-        document.getElementById("visitorCount").innerText = count;
-      });
-    </script>
-  </body>
+  <!-- Script Countdown -->
+  <script>
+    const target = new Date("2025-08-10T00:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+    setInterval(() => {
+      const now = new Date().getTime();
+      const selisih = target - now;
+      const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+      countdownEl.innerText = `💞 ${hari} hari menuju hari bahagia kami 💞`;
+    }, 1000);
+  </script>
+</body>
 </html>
